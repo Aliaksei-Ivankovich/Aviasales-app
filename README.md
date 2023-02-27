@@ -1,3 +1,3 @@
 Aviasales App
 
-aviasales-app-ebon.vercel.app
+https://aviasales-app-ebon.vercel.app/
