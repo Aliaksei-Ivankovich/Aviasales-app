@@ -1,0 +1,63 @@
+@import '../../style/variables.scss';
+
+.ticket {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 1.25rem;
+    background-color: $background;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    &__header {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__price {
+        color: $main-color;
+        font-size: 1.5rem;
+        font-weight: 600;
+        letter-spacing: -0.5px;
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 0.625rem;
+    }
+    &__info-wrapper {
+        display: flex;
+        justify-content: flex-start;
+        gap: 20%;
+    }
+    &__date{
+        display: flex;
+        flex-direction: column;
+    }
+    &__duration {
+        display: flex;
+        flex-direction: column;
+    }
+    &__stops{
+        display: flex;
+        flex-direction: column;
+    }
+    &__text {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: $primary-text-color;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+    }
+    &__info {
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: $main-text-color;
+    }
+}
+
+@media (max-width: 576px) {
+    .ticket {
+        &__info-wrapper {
+            gap: 10%;
+        }
+    }
+}

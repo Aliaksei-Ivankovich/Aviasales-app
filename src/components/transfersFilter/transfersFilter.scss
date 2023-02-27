@@ -1,0 +1,82 @@
+@import '../../style/variables.scss';
+
+.stops-filter {
+    grid-area: stops;
+    padding: 1.25rem 0;
+    max-height: 17rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1.25rem;
+    background-color: $background;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    &__title {
+        padding: 0 1.25rem;
+        color: $main-text-color;
+        font-weight: 600;
+        font-size: 0.75rem;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+    }
+    &__btn-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+    &__btn {
+        display: flex;
+        align-items: center;
+        padding: 0.625rem 1.25rem;
+        &:hover {
+            background-color: $stops-background;
+            cursor: pointer;
+        }
+        & input {
+            position: relative;
+            appearance: none;
+        }
+        & input::before {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%) ;
+            content: '';
+            width: 1.25rem;
+            height: 1.25rem;
+            border: 1px solid $border-color;
+            border-radius:  2px;
+        }
+        & input::after {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translateY(-50%) translateX(45%);
+            content: '';
+            width: 0.75rem;
+            height: 0.75rem;
+            background: center / contain no-repeat url('../../img/check-box-cheched.svg');
+        }
+        & input:checked::before {
+            border-color: $main-color;
+        }
+        & input:checked::after {
+            display: block;
+        }
+        & input:focus {
+            outline-color: $main-color;
+        }
+    }
+    &__text {
+        padding-left: 2rem;
+        color: $main-text-color;
+        font-weight: 400;
+        font-size: 0.8125rem;
+    }
+}
+
+@media (max-width: 776px) {
+    .stops-filter {
+        gap: 0.75rem;
+    }
+}

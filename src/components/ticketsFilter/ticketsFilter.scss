@@ -1,0 +1,43 @@
+@import '../../style/variables.scss';
+
+.tickets-filter {
+    grid-area: filter;
+    display: flex;
+    justify-content: center;
+    max-height: 3rem;
+
+    &__btn {
+        padding: 1rem;
+        width: 100%;
+        color: $main-text-color;
+        background-color: $background;
+        font-weight: 600;
+        font-size: 0.75rem;
+        text-align: center;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        border: none;
+        border-top: 1px solid $border-color;
+        border-bottom: 1px solid $border-color;
+        border-right: 1px solid $border-color;
+        cursor: pointer;
+        &:first-child {
+            border-left: 1px solid $border-color;
+            border-radius: 5px 0 0 5px;
+        }
+        &:last-child {
+            border-radius: 0 5px 5px 0;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+        &:focus {
+            outline-offset: -1px;
+            outline: 1px solid $main-color;
+        }
+        &_active {
+            background-color: $main-color;
+            color: $background;
+        }
+    }
+}

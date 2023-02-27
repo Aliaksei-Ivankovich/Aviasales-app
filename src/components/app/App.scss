@@ -1,0 +1,58 @@
+@import '../../style/variables.scss';
+
+.app {
+  position: relative;
+  margin: 0 auto;
+  padding: 10rem 0 3.125rem 0;
+  max-width: 60rem;
+  background-color: $app-background;
+  &__container {
+    margin: 0 auto;
+    max-width: 47rem;
+    display: grid;
+    grid-template: 
+              "stops filter filter" auto
+              "stops tickets tickets" auto / 30% 1fr 1fr;
+    gap: 1.25rem;
+  }
+  &__logo {
+    position: absolute;
+    left: 50%;
+    top: 5rem;
+    transform: translateX(-50%) translateY(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .app {
+    padding: 6rem 0 2.125rem 0;
+    &__container {
+      padding: 0 0.5rem;
+      grid-template: 
+      "stops filter filter" auto
+      "stops tickets tickets" auto / 25% 1fr 1fr;
+      gap: 1rem;
+    }
+    &__logo {
+      position: absolute;
+      left: 50%;
+      top: 3.25rem;
+      transform: translateX(-50%) translateY(-50%);
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .app {
+    &__container {
+      padding: 0 0.5rem;
+      grid-template: 
+      "stops stops stops" 
+      "filter filter filter" 
+      "tickets tickets tickets";
+      gap: 0.75rem;
+    }
+  }
+}
+
+
